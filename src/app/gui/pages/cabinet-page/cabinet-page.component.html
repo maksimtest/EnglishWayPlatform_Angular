@@ -1,0 +1,9 @@
+<div class="cabinet-area">
+  <section>
+    <app-cabinet-aside [menu]="asideMenu"></app-cabinet-aside>
+    <app-cabinet-main
+      [menu]="mainMenu"
+      (logoutEvent)="logout()"
+    ></app-cabinet-main>
+  </section>
+</div>

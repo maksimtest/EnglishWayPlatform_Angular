@@ -1,0 +1,76 @@
+.layout-aside {
+  width: 200px;
+}
+.aside-header {
+  height: 40px;
+}
+.aside-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.aside-content-banner {
+  width: 120px;
+  height: 120px;
+  margin-top: 40px;
+  margin-bottom: 14px;
+}
+.aside-header {
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  background-color: var(--cabinetLayoutAsideTopBackground);
+  color: var(--cabinetLayoutAsideTopColor);
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aside-content-header {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  padding-left: 22px;
+}
+.aside-content-nav {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+.aside-content-nav li {
+  display: block;
+  border-top: 1px solid var(--cabinetLayoutAsideTopBackground);
+  padding: 10px 2px;
+}
+.aside-content-nav a {
+  color: var(--cabinetLayoutAsideColor);
+}
+.aside-content-nav li:hover {
+  background-color: var(--cabinetLayoutAsideActiveBackground);
+  border-left: 3px solid var(--cabinetLayoutAsideActiveBorder);
+  padding: 10px 0;
+}
+.aside-content-nav .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.aside-content-nav .link-name {
+  display: inline-block;
+}
+.aside-content-nav .next-icon {
+  width: 14px;
+  height: 14px;
+  rotate: -90deg;
+  margin-left: 40px;
+}
+.aside-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  background-color: var(--cabinetLayoutAsideBackground);
+  color: var(--cabinetLayoutAsideColor);
+  padding: 10px;
+  height: 100%;
+}

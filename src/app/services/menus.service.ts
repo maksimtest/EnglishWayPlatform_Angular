@@ -15,19 +15,19 @@ export class MenusService {
     {
       description: "LANDING-MAIN-MENU",
       menu: [
-        {name: "LANDING-MAIN_MENU_ITEM1", url: "/"},
-        {name: "LANDING-MAIN_MENU_ITEM2", url: "/main"},
-        {name: "LANDING-MAIN_MENU_ITEM3", url: "/main2"},
-        {name: "LANDING-MAIN_MENU_ITEM4", url: "#"},
+        {name: "LANDING-MAIN_MENU_ITEM1", url: "/", img:"", title:""},
+        {name: "LANDING-MAIN_MENU_ITEM2", url: "/main", img:"", title:""},
+        {name: "LANDING-MAIN_MENU_ITEM3", url: "/main2", img:"", title:""},
+        {name: "LANDING-MAIN_MENU_ITEM4", url: "#", img:"", title:""},
       ]
     },
     {
-      description: "hello-cabinet-page-menu",
+      description: "cabinet-page-menu",
       menu: [
-        {name: "Item111", url: "#1"},
-        {name: "Item211", url: "menu"},
-        {name: "Item311", url: "#3"},
-        {name: "Item411", url: "#4"},
+        {name: "Home", url: "#", img:"images/home-icon.png", title:""},
+        {name: "Home2", url: "menu", img:"images/users-icon.png", title:""},
+        {name: "Home3", url: "#3", img:"images/download-icon.png", title:""},
+        {name: "Home4", url: "#3", img:"images/download-icon.png", title:""},
       ]
     }
   ]

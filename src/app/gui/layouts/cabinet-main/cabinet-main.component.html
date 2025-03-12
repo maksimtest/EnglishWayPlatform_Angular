@@ -1,0 +1,78 @@
+<main>
+  <div class="main-header">
+
+    <ul class="main-header-nav">
+      <li *ngFor="let menuItem of menu">
+        <a [routerLink]="menuItem.url"
+           [ngClass]="{'active': currentPageByMenuItem === menuItem.name}"
+        >{{ menuItem.name}}</a>
+      </li>
+    </ul>
+    <div class="main-header-aside">
+      profile
+      <a href="#" (click)="logout(); $event.preventDefault()">log-out</a>
+    </div>
+  </div>
+  <div class="main-content">
+    <div>
+      <h2>Hi Vladimir! Welcome to dashboard.</h2>
+      <p>Make sure You have enouph analitical information.</p>
+    </div>
+
+
+
+
+    <div class="block-task" id="block-task-9">
+      <div class="block-task-question">
+        <p>Task 1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed ab animi voluptatem labore et rerum, nulla vero culpa error impedit sapiente provident eum ducimus, in incidunt, temporibus nam ea enim.</p>
+        <div class="block-task-mode">
+          <button onclick="closeTaskDetails(9)" id="block-task-mode-9">-</button>
+        </div>
+      </div>
+      <div class="block-task-content" id="block-task-content-9">
+        <p class="block-task-case">1. Are you sor?
+          <input type="text" class="block-task-inputtext incorrect-value" value="Are">
+        </p>
+        <p class="block-task-case" class="block-task-inputtext">2. Does he handsome person?
+          <input type="text" class="block-task-inputtext correct-value" value="Are">
+        </p>
+        <p class="block-task-case" class="block-task-inputtext">3. It's makes me crazy.
+          <input type="text" class="block-task-inputtext" value="Are">
+        </p>
+        <div class="block-task-buttons">
+          <button>Check</button>
+          <button>Answers</button>
+          <button>Reset</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="block-task" id="block-task-10">
+      <div class="block-task-question">
+        <p>Task 2. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed ab animi voluptatem labore et rerum, nulla vero culpa error impedit sapiente provident eum ducimus, in incidunt, temporibus nam ea enim.</p>
+        <div class="block-task-mode">
+          <button onclick="closeTaskDetails(10)" id="block-task-mode-10">-</button>
+        </div>
+      </div>
+      <div class="block-task-content" id="block-task-content-10">
+        <p class="block-task-case">1. Are you sor?
+          <input type="text" class="block-task-inputtext incorrect-value" value="Are">
+        </p>
+        <p class="block-task-case" class="block-task-inputtext">2. Does he handsome person?
+          <input type="text" class="block-task-inputtext correct-value" value="Are">
+        </p>
+        <p class="block-task-case" class="block-task-inputtext">3. It's makes me crazy.
+          <input type="text" class="block-task-inputtext" value="Are">
+        </p>
+        <div class="block-task-buttons">
+          <button>Check</button>
+          <button>Answers</button>
+          <button>Reset</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
