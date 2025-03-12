@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family: "KumbhSans";
+  src: url('../public/fonts/KumbhSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face{
+  font-family: "KumbhSans";
+  src: url('../public/fonts/KumbhSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face{
+  font-family: "Inter";
+  src: url('../public/fonts/Inter18pt-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face{
+  font-family: "Inter";
+  src: url('../public/fonts/Inter18pt-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face{
+  font-family: "Inter";
+  src: url('../public/fonts/Inter18pt-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face{
+  font-family: "Inter";
+  src: url('../public/fonts/Inter24pt-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --subscribeColor: #9cc9f5;
+  --subscribeBackground: #2d394b;
+  --mainSectionBackground: #572B9D;
+  --mainSectionColor: white;
+  --activeLinkColor: #01C9F5;
+  --buttonBackground: #0066FF;
+  --errorTextColor: red;
+}
+
+body {
+  font-family: KumbhSans, Inter, Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  z-index: 0;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+.container-landing{
+  max-width: 1250px;
+  width: calc(100% - 80px);
+  margin: 0 auto;
+  text-align: center;
+}
+ul li{
+  display: inline-block;
+}
+li {
+  list-style-type: none;
+}
+.arrow-after::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url('../public/images/arow-icon.png');
+  background-size: cover;
+  margin-left: 4px;
+  vertical-align: middle;
+}

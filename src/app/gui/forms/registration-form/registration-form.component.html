@@ -1,0 +1,88 @@
+<app-form-template
+  [mainForm]="registerForm"
+  [mainFormDetails]="registerFormDetails"
+  [successTextShow]="isSuccessTextAfterRegisterVisible"
+  [showValidationErrors]="isRegisterErrorVisible"
+  [connectionProblemVisible]="connectionProblemVisible"
+  [errorText]="errorText"
+  changeTypeFormLink="REGISTRATION-PAGE_MOVE_TO_REMEMBER_FORM"
+  submitButtonName = "REGISTRATION-PAGE_REGISTER_BUTTON_NAME"
+  (changeTypeFormEvent)="switchTypeForm($event)"
+  (formSubmitEvent)="onRegisterSubmit()"
+  >
+  {{ "REGISTRATION-PAGE_SUCCESS_TEXT_AFTER_REGISTERED"|translate }}
+  <br>
+  <a routerLink="/login">{{"LANDING-SECTION01_LOGIN_LINK"|translate}}</a>
+</app-form-template>
+
+
+<!--<form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">-->
+
+<!--  <div class="field-area">-->
+<!--    <div class="field-line">-->
+<!--      <label>{{ "REGISTRATION-PAGE_USERNAME_FIELD"|translate }}:</label>-->
+<!--      <input type="text" formControlName="username" autocomplete="username">-->
+<!--    </div>-->
+<!--    <p class="error-text"-->
+<!--       *ngIf="showRegistrationErrors && registerForm.get('username')?.errors?.['error']">-->
+<!--      {{registerForm.get('username')?.errors?.['error']|translate}}-->
+<!--    </p>-->
+<!--    <p class="comment-text">{{ "REGISTRATION-PAGE_REASON_FOR_USERNAME"|translate }}</p>-->
+<!--  </div>-->
+
+<!--  <div class="field-area">-->
+<!--    <div class="field-line">-->
+<!--      <label>{{ "REGISTRATION-PAGE_NICKNAME_FIELD"|translate }}:</label>-->
+<!--      <input type="text" formControlName="name" autocomplete="nickname">-->
+<!--    </div>-->
+<!--    <p class="error-text"-->
+<!--       *ngIf="showRegistrationErrors && registerForm.get('name')?.errors?.['error']">-->
+<!--      {{registerForm.get('name')?.errors?.['error']|translate}}-->
+<!--    </p>-->
+<!--    <p class="comment-text">{{ "REGISTRATION-PAGE_REASON_FOR_NICKNAME"|translate }}</p>-->
+<!--  </div>-->
+
+<!--  <div class="field-area">-->
+<!--    <div class="field-line">-->
+<!--      <label>{{ "LOGIN-DIALOG_PASSWORD_FIELD"|translate }}:</label>-->
+<!--      <input type="password" formControlName="password" placeholder="min 1 character"-->
+<!--             autocomplete="new-password">-->
+<!--    </div>-->
+<!--    <p class="error-text"-->
+<!--       *ngIf="showRegistrationErrors && registerForm.get('password')?.errors?.['error']">-->
+<!--      {{registerForm.get('password')?.errors?.['error']|translate}}-->
+<!--    </p>-->
+<!--    <p class="comment-text">Lorem ipsum dolor sit amet.</p>-->
+<!--  </div>-->
+
+<!--  <div class="field-area">-->
+<!--    <div class="field-line">-->
+<!--      <label>{{ "LOGIN-DIALOG_PASSWORD_FIELD"|translate }}:</label>-->
+<!--      <input type="password" formControlName="confirmPassword" autocomplete="new-password">-->
+<!--    </div>-->
+<!--    <p class="error-text"-->
+<!--       *ngIf="showRegistrationErrors && registerForm.get('confirmPassword')?.errors?.['error']">-->
+<!--      e{{registerForm.get('confirmPassword')?.errors?.['error']|translate}}-->
+<!--    </p>-->
+<!--    <p class="comment-text">Lorem ipsum dolor sit amet.</p>-->
+<!--  </div>-->
+
+<!--  <div class="field-area">-->
+<!--    <div class="field-line">-->
+<!--      <label>{{ "LOGIN-DIALOG_EMAIL_FIELD"|translate }}:</label>-->
+<!--      <input type="email" formControlName="email" autocomplete="email">-->
+<!--    </div>-->
+<!--    <p class="error-text"-->
+<!--       *ngIf="showRegistrationErrors && registerForm.get('email')?.errors?.['error']">-->
+<!--      {{registerForm.get('email')?.errors?.['error']|translate}}-->
+<!--    </p>-->
+<!--    <p class="comment-text">{{ "REGISTRATION-PAGE_REASON_FOR_EMAIL"|translate }}</p>-->
+<!--  </div>-->
+
+<!--  <div class="links-box">-->
+<!--    <button type="submit"-->
+<!--            [disabled]="showRegistrationErrors && registerForm.invalid">Зарегистрироваться</button>-->
+<!--    <a href="#"-->
+<!--       (click)="switchTypeForm(); $event.preventDefault()">{{ "REGISTRATION-PAGE_FORGOT_PASSWORD_FIELD"|translate }}</a>-->
+<!--  </div>-->
+<!--</form>-->

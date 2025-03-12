@@ -1,0 +1,35 @@
+li{
+  margin-right: 40px;
+}
+a{
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.link{
+  position: relative;
+  opacity: 0.9;
+}
+.link:after{
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.4s ease-in-out;
+}
+.link:hover{
+  color: white;
+  opacity: 1;
+}
+.link:hover::after {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+.active{
+  color: var(--activeLinkColor);
+}

@@ -1,0 +1,13 @@
+.subscribe-section{
+  background-color: var(--subscribeBackground);
+  padding: 14px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+.subscribe-section a, .subscribe-section p{
+  color: var(--subscribeColor);
+  font-size: 14px;
+  text-align: center;
+}

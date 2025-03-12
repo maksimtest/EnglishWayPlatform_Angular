@@ -1,0 +1,19 @@
+<app-login-dialog [isVisible]="isLoginDialogVisible" (closeModal)="closeLoginDialog()"/>
+
+<section class="header-section">
+  <div class="container-landing">
+    <div class="header">
+      <a routerLink="/">
+        <img src="images/logo.png" class="header-logo" alt="">
+      </a>
+
+      <app-landing-menu></app-landing-menu>
+
+      <div class="header-aside">
+        <a href="#" routerLink="/registration">{{"LANDING-SECTION01_REGISTRATION_LINK"|translate}}</a>
+        <a href="#" (click)="openLoginDialog(); $event.preventDefault()">{{"LANDING-SECTION01_LOGIN_LINK"|translate}}</a>
+        <app-language-select></app-language-select>
+      </div>
+    </div>
+  </div>
+</section>

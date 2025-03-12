@@ -1,0 +1,7 @@
+<ul class="nav">
+  <li *ngFor="let menuItem of menu">
+    <a [routerLink]="menuItem.url"
+       [ngClass]="{'active': currentMenuUrl === '/'+menuItem.url, 'link': currentMenuUrl !== '/'+menuItem.url}"
+    >{{ menuItem.name | translate }}</a>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+<app-landing-subscribe-section></app-landing-subscribe-section>
+<app-landing-header-section></app-landing-header-section>
+
+<section>
+  <div class="form-container">
+    <p *ngIf="isActivatedInfoVisible">
+      {{ "CONGRATULATIONS_YOUR_ACCOUNT_WAS_ACTIVATED"|translate }}
+      <br>
+      {{ "ACTIVATED_TEXT_AFTER_REGISTRATION"|translate }}
+    </p>
+    <p *ngIf="!isActivatedInfoVisible">
+      {{ errorText|translate }}
+    </p>
+  </div>
+</section>
+

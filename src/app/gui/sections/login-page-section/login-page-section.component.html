@@ -1,0 +1,19 @@
+<section>
+  <div class="form-container">
+
+    <div *ngIf="isAuthFormVisible">
+      <h1>{{ "LOGIN-PAGE_HEADER_TEXT"|translate }}</h1>
+      <app-authentication-form
+        (changeTypeFormEvent) = "switchFormType($event)"
+      ></app-authentication-form>
+    </div>
+
+    <div *ngIf="!isAuthFormVisible">
+      <h1>{{ "REGISTRATION-PAGE_REMEMBER_HEADER_TEXT"|translate }}</h1>
+      <app-remember-password-form
+        (changeTypeFormEvent) = "switchFormType($event)"
+      ></app-remember-password-form>
+    </div>
+
+</div>
+</section>

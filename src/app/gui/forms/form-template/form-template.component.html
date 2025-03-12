@@ -1,0 +1,44 @@
+<form [formGroup]="mainForm" *ngIf="mainForm" (ngSubmit)="onFormSubmit()">
+  <div *ngIf="!successTextShow">
+    <div class="field-area" *ngFor="let key of getControlKeys()">
+
+
+      <div *ngIf="getTypeText(key)">
+        <div class="field-line">
+          <label [for]="key">{{ getTitleText(key) | translate }}:</label>
+          <input
+            type="{{getTypeText(key)}}"
+            [id]="key"
+            [formControlName]="key"
+            [placeholder]="getPlaceholderText(key)"
+            autocomplete="{{getAutocompleteText(key)}}">
+        </div>
+        <p class="comment-text" *ngIf="getCommentText(key)">{{ getCommentText(key) | translate }}</p>
+        <p class="error-text"
+           *ngIf="showValidationErrors && getErrorText(key)">
+          {{ getErrorText(key)|translate }}
+        </p>
+      </div>
+
+    </div>
+
+    <div class="links-box">
+      <button type="submit"
+              [disabled]="showValidationErrors && mainForm.invalid">{{ submitButtonName|translate }}
+      </button>
+      <a href="#" *ngIf="changeTypeFormLink"
+         (click)="switchTypeForm(); $event.preventDefault()">{{ changeTypeFormLink|translate }}</a>
+    </div>
+  </div>
+</form>
+
+<p class="error-text" *ngIf="errorText">{{errorText|translate}}</p>
+<p class="error-text" *ngIf="connectionProblemVisible">
+  {{"AUTHENTICATION_REGISTRATION_FORM_CONNECTION_PROBLEM_PART1"|translate}}
+  <br>
+  {{"AUTHENTICATION_REGISTRATION_FORM_CONNECTION_PROBLEM_PART2"|translate}}
+</p>
+
+<p class="success-text" *ngIf="successTextShow">
+  <ng-content/>
+</p>

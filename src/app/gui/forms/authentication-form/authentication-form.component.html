@@ -1,0 +1,13 @@
+<app-form-template
+  [mainForm]="authForm"
+  [mainFormDetails]="authFormDetails"
+  [successTextShow]="isSuccessTextVisible"
+  [showValidationErrors]="true"
+  [errorText]="errorText"
+  [connectionProblemVisible]="connectionProblemVisible"
+  changeTypeFormLink="REGISTRATION-PAGE_MOVE_TO_REMEMBER_FORM"
+  submitButtonName = "LOGIN-DIALOG_LOGIN_BUTTON"
+  (changeTypeFormEvent)="switchTypeForm($event)"
+  (formSubmitEvent)="onFormSubmit()"
+>
+</app-form-template>

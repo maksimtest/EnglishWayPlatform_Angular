@@ -1,0 +1,25 @@
+<div class="modal" *ngIf="isVisible">
+  <div class="modal-content">
+    <div class="header">
+      <h2 *ngIf="isAuthMode">{{ "LOGIN-PAGE_HEADER_TEXT"|translate }}</h2>
+      <h2 *ngIf="!isAuthMode">{{ "REGISTRATION-PAGE_REMEMBER_HEADER_TEXT"|translate }}</h2>
+      <a href="#" (click)="onClose(); $event.preventDefault()">&times;</a>
+    </div>
+    <div class="login-form">
+
+      <div *ngIf="isAuthMode">
+        <app-authentication-form
+          (changeTypeFormEvent) = "switchFormType($event)"
+        ></app-authentication-form>
+      </div>
+
+      <div *ngIf="!isAuthMode">
+        <app-remember-password-form
+          changeTypeFormLink="LOGIN-DIALOG_SWITCH_TO_AUTH_FORM"
+          (changeTypeFormEvent) = "switchFormType($event)"
+        ></app-remember-password-form>
+      </div>
+
+    </div>
+  </div>
+</div>

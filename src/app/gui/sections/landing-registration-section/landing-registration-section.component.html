@@ -1,0 +1,91 @@
+<section>
+  <div class="form-container">
+
+    <div *ngIf="isRegistrationFormVisible">
+      <h1>{{ "REGISTRATION-PAGE_HEADER_TEXT"|translate }}</h1>
+      <app-registration-form
+      (changeTypeFormEvent) = "switchFormType($event)"
+      ></app-registration-form>
+    </div>
+
+    <div *ngIf="!isRegistrationFormVisible">
+      <h1>{{ "REGISTRATION-PAGE_REMEMBER_HEADER_TEXT"|translate }}</h1>
+      <app-remember-password-form
+        (changeTypeFormEvent) = "switchFormType($event)"
+      ></app-remember-password-form>
+    </div>
+
+
+    <!--    <div *ngIf="isRememberFormVisible">-->
+    <!--      <h1>{{ "REGISTRATION-PAGE_REMEMBER_HEADER_TEXT"|translate }}</h1>-->
+
+    <!--      <form [formGroup]="rememberForm" (ngSubmit)="onRememberSubmit()">-->
+
+    <!--        <div class="field-area">-->
+    <!--          <div class="field-line">-->
+    <!--            <label>{{ "LOGIN-DIALOG_EMAIL_FIELD"|translate }}:</label>-->
+    <!--            <input type="email" formControlName="email" autocomplete="email">-->
+    <!--          </div>-->
+    <!--          <p class="error-text"-->
+    <!--             *ngIf="rememberForm.get('password')?.errors?.['error']">-->
+    <!--            e{{rememberForm.get('confirmPassword')?.errors?.['error']|translate}}-->
+    <!--          </p>-->
+    <!--        </div>-->
+
+    <!--        <div class="links-box">-->
+    <!--          <button type="submit"-->
+    <!--                  [disabled]="rememberForm.invalid">{{ "REGISTRATION-PAGE_SEND_CODE_TO_EMAIL_BUTTON"|translate }}-->
+    <!--          </button>-->
+    <!--          <a href="#"-->
+    <!--             (click)="switchFormMode(); $event.preventDefault()">{{ "REGISTRATION-PAGE_MOVE_TO_REG_FORM"|translate }}</a>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </div>-->
+
+
+    <!--    <div *ngIf="isChangePasswordVisible">-->
+    <!--      <h1>{{ "CHANGE_PASSWORD_HEADER_TEXT"|translate }}</h1>-->
+
+    <!--      <form [formGroup]="changePasswordForm" (ngSubmit)="onChangePasswordSubmit()">-->
+
+    <!--        <div class="field-area">-->
+    <!--          <div class="field-line">-->
+    <!--            <label>{{ "LOGIN-DIALOG_PASSWORD_FIELD"|translate }}:</label>-->
+    <!--            <input type="email" formControlName="password" autocomplete="password">-->
+    <!--          </div>-->
+    <!--          <p class="error-text"-->
+    <!--             *ngIf="changePasswordForm.get('password')?.errors?.['error']">-->
+    <!--            e{{changePasswordForm.get('confirmPassword')?.errors?.['error']|translate}}-->
+    <!--          </p>-->
+    <!--        </div>-->
+
+    <!--        <div class="field-area">-->
+    <!--          <div class="field-line">-->
+    <!--            <label>{{ "LOGIN-DIALOG_PASSWORD_FIELD"|translate }}:</label>-->
+    <!--            <input type="email" formControlName="confirmPassword" autocomplete="password">-->
+    <!--          </div>-->
+    <!--          <p class="error-text"-->
+    <!--             *ngIf="changePasswordForm.get('confirmPassword')?.errors?.['error']">-->
+    <!--            e{{changePasswordForm.get('confirmPassword')?.errors?.['error']|translate}}-->
+    <!--          </p>-->
+    <!--        </div>-->
+
+    <!--        <div class="links-box">-->
+    <!--          <button type="submit"-->
+    <!--                  [disabled]="changePasswordForm.invalid">{{ "SAVE_PASSWORD_BUTTON"|translate }}-->
+    <!--          </button>-->
+    <!--          <a href="#"-->
+    <!--             (click)="switchFormMode(); $event.preventDefault()">{{ "LOGIN-DIALOG_LOGIN_BUTTON"|translate }}</a>-->
+    <!--        </div>-->
+    <!--      </form>-->
+    <!--    </div>-->
+
+    <!--    <div *ngIf="isSuccessTextAfterRegisterVisible">-->
+    <!--      {{ "REGISTRATION-PAGE_SUCCESS_TEXT_AFTER_REGISTERED"|translate }}-->
+    <!--    </div>-->
+    <!--    <div *ngIf="isSuccessTextAfterRememberVisible">-->
+    <!--      {{ "PAGE_SUCCESS_TEXT_AFTER_REMEMBER_PASSWORD"|translate }}-->
+    <!--    </div>-->
+
+  </div>
+</section>

@@ -1,0 +1,38 @@
+.field-area, .links-box, .error-text, .success-text{
+  margin-top: 20px;
+}
+
+.field-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.comment-text{
+  color: black;
+  text-align: right;
+  margin-top: 4px;
+}
+.error-text{
+  text-align: right;
+  color: red;
+}
+.links-box button{
+  padding: 4px 8px;
+}
+.links-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+input{
+  width: 176px;
+  padding: 8px;
+  border-radius: 8px;
+}
+.success-text{
+  color: black;
+  font-size: 16px;
+  text-align: left;
+}
