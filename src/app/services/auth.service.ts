@@ -13,7 +13,7 @@ export class AuthService {
   private activateApiUrl = this.apiUrl + 'activate';
   private regApiUrl = this.apiUrl + 'reg';
   private simpleRegApiUrl = this.apiUrl + 'simple-reg';
-  private cabinetApiUrl = this.apiUrl + 'secured';
+  private cabinetApiUrl = this.apiUrl + 'cabinet';
 
 
   constructor(private http: HttpClient) {}
@@ -41,7 +41,7 @@ export class AuthService {
   active(code: string | null): Observable<any> {
     return this.http.get(this.activateApiUrl+"?code="+code);
   }
-  cabinet(){
+  cabinet(): Observable<any>{
     return this.http.post(this.cabinetApiUrl, '');
   }
 }

@@ -1,0 +1,21 @@
+<aside class="layout-aside">
+  <div class="aside-header">
+    <span>{{companyName}}</span>
+  </div>
+  <div class="aside-content">
+    <img src="images/banner.png" alt="" class="aside-content-banner">
+    <p class="aside-content-header">Menu</p>
+    <ul class="aside-content-nav">
+      <li *ngFor="let menuItem of menu">
+        <a [routerLink]="menuItem.url"
+          title="{{menuItem.title}}"
+        >
+          <img src="{{menuItem.img}}" alt="" class="icon" *ngIf="menuItem.img">
+          <p class="link-name">{{menuItem.name}}</p>
+          <img src="images/next.png" alt="" class="next-icon">
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</aside>

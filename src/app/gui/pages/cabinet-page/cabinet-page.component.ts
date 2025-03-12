@@ -6,30 +6,47 @@ import {
 import {AuthService} from '../../../services/auth.service';
 import {NgIf} from '@angular/common';
 import {Router} from '@angular/router';
+import {MenusService} from '../../../services/menus.service';
+import {Menu} from '../../../interfaces/Menu';
+import {MenuItem} from '../../../interfaces/MenuItem';
+import {CabinetAsideComponent} from '../../layouts/cabinet-aside/cabinet-aside.component';
+import {CabinetMainComponent} from '../../layouts/cabinet-main/cabinet-main.component';
 
 @Component({
-  selector: 'app-hello-cabinet-page',
+  selector: 'app-cabinet-page',
   standalone: true,
   imports: [
     LandingHeaderSectionComponent,
     LandingSubscribeSectionComponent,
-    NgIf
+    NgIf,
+    CabinetAsideComponent,
+    CabinetMainComponent
   ],
-  templateUrl: './hello-cabinet.component.html',
-  styleUrl: './hello-cabinet.component.css'
+  templateUrl: './cabinet-page.component.html',
+  styleUrl: './cabinet-page.component.css'
 })
-export class HelloCabinetComponent {
+export class CabinetPageComponent {
   text: string = "";
-
+  mainMenu: MenuItem[] =[];
+  asideMenu: MenuItem[]=[];
   constructor(private authService: AuthService,
-              private router: Router) {
+              private router: Router,
+              private menusService:MenusService) {
+    this.init();
+    //this.initMenu();
   }
-
-  ngOnInit() {
+  initMenu(){
+    this.mainMenu = this.menusService.getMenu('cabinet-page-menu')?? [];
+    this.asideMenu = this.mainMenu;
+  }
+  init() {
     this.authService.cabinet()
       .subscribe({
         next: value => {
-          this.text = 'next:'+JSON.stringify(value);
+          this.mainMenu = value.mainMenu.items ?? [];
+          this.asideMenu = value.asideMenu.items ?? [];
+          console.log('next:'+JSON.stringify(value))
+          //this.text = 'next:'+JSON.stringify(value);
         },
         error: value => {
           console.log('error:'+JSON.stringify(value));

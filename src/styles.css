@@ -47,6 +47,32 @@
   --activeLinkColor: #01C9F5;
   --buttonBackground: #0066FF;
   --errorTextColor: red;
+
+  --cabinetLayoutAsideTopBackground: #949da9;
+  --cabinetLayoutAsideTopColor: #FFFFFF;
+
+  --cabinetLayoutAsideBackground: #6d7886;
+  --cabinetLayoutAsideColor: #d8dee5;
+  --cabinetLayoutAsideActiveBackground: #6f7270;
+  --cabinetLayoutAsideActiveBackground1: #6f7270;
+  --cabinetLayoutAsideActiveBorder: #8ec3dc;
+
+  --cabinetLayoutMainTopBackground: #FFFFFF;
+  --cabinetLayoutMainTopColor: #818181;
+  --cabinetLayoutMainActiveTopColor: #333934;
+
+  --cabinetLayoutMainBackground: #E7EAF0;
+  --cabinetLayoutMainHeaderColor: #6b6e73;
+  --cabinetLayoutMainColor: #6E7177;
+
+  --cabinetTaskBackground: white;
+  --cabinetTaskIncorrectValueBackground: #ed33336e;
+  --cabinetTaskCorrectValueBackground: #228b08c4;
+  --cabinetTaskColor: black;
+  --cabinetTaskButtonBackground: #08A2F2;
+  --cabinetTaskHoverButtonBackground: #37b0ee;
+  --cabinetTaskButtonColor: white;
+
 }
 
 body {
