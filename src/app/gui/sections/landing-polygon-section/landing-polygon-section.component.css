@@ -1,0 +1,71 @@
+.polygon-section {
+  background: var(--landingPolygonSectionBackgroundColor);
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.polygon-section h2 {
+  text-align: center;
+  margin-bottom: 60px;
+  /*color: var(--polygonSectionH2TextColor);*/
+}
+
+.polygon-steps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.polygon-step {
+  position: relative;
+}
+
+.polygon-hexagon {
+  width: 260px;
+  padding: 30px 16px 50px;
+  background: linear-gradient(145deg, #ffffff, #e5ecf3);
+  clip-path: polygon(50% 0%,95% 20%,95% 80%,50% 100%,5% 80%,5% 20%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.polygon-hexagon:hover {
+  transform: translateY(-5px);
+}
+
+.polygon-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  background: radial-gradient(circle at top left, #3b82f6, #2563eb);
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.polygon-hexagon h3 {
+  margin-bottom: 10px;
+  /*color: #1f2937;*/
+  text-align: center;
+  /*color: var(--cardSectionH3Color);*/
+}
+
+.polygon-hexagon p {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: var(--landingPolygonSectionH2TextColor);
+}
+
+.polygon-line svg {
+  width: 180px;
+  height: 40px;
+}
+
+

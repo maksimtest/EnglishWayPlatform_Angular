@@ -2,8 +2,6 @@ import {Component} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 import {FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, Validators} from '@angular/forms';
-import {AuthService} from '../../../services/auth.service';
-import {catchError, throwError} from 'rxjs';
 import {RegistrationFormComponent} from '../../forms/registration-form/registration-form.component';
 import {RememberPasswordFormComponent} from '../../forms/remember-password-form/remember-password-form.component';
 

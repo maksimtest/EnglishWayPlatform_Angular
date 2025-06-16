@@ -3,9 +3,9 @@ import {LandingHeaderSectionComponent} from '../../sections/landing-header-secti
 import {
   LandingSubscribeSectionComponent
 } from '../../sections/landing-subscribe-section/landing-subscribe-section.component';
-import {AuthService} from '../../../services/auth.service';
+import {ApiService} from '../../../services/api.service';
 import {NgIf} from '@angular/common';
-import {Router} from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
 import {MenusService} from '../../../services/menus.service';
 import {Menu} from '../../../interfaces/Menu';
 import {MenuItem} from '../../../interfaces/MenuItem';
@@ -13,39 +13,44 @@ import {CabinetAsideComponent} from '../../layouts/cabinet-aside/cabinet-aside.c
 import {CabinetMainComponent} from '../../layouts/cabinet-main/cabinet-main.component';
 
 @Component({
-  selector: 'app-cabinet-page',
+  selector: 'app-inner-page-template',
   standalone: true,
   imports: [
     LandingHeaderSectionComponent,
     LandingSubscribeSectionComponent,
     NgIf,
     CabinetAsideComponent,
-    CabinetMainComponent
+    CabinetMainComponent,
+    RouterOutlet
   ],
-  templateUrl: './cabinet-page.component.html',
-  styleUrl: './cabinet-page.component.css'
+  templateUrl: './inner-page-template.component.html',
+  styleUrl: './inner-page-template.component.css'
 })
-export class CabinetPageComponent {
+export class InnerPageTemplateComponent {
   text: string = "";
   mainMenu: MenuItem[] =[];
   asideMenu: MenuItem[]=[];
-  constructor(private authService: AuthService,
+  roles: string="";
+  constructor(private apiService: ApiService,
               private router: Router,
               private menusService:MenusService) {
+    this.initMenu();
     this.init();
-    //this.initMenu();
   }
   initMenu(){
     this.mainMenu = this.menusService.getMenu('cabinet-page-menu')?? [];
-    this.asideMenu = this.mainMenu;
+    this.asideMenu = this.menusService.getMenu('cabinet-page-menu')?? [];
   }
   init() {
-    this.authService.cabinet()
+    this.apiService.innerPage()
       .subscribe({
         next: value => {
-          this.mainMenu = value.mainMenu.items ?? [];
-          this.asideMenu = value.asideMenu.items ?? [];
-          console.log('next:'+JSON.stringify(value))
+          this.mainMenu = value.mainMenu ?? [];
+          this.roles = value.roles;
+          //this.asideMenu = value.asideMenu.items ?? [];
+          console.log('cabinet.next:value='+JSON.stringify(value))
+          console.log('cabinet.next: mainMenu='+this.mainMenu)
+          console.log('cabinet.next: roles='+this.roles)
           //this.text = 'next:'+JSON.stringify(value);
         },
         error: value => {
@@ -66,24 +71,5 @@ export class CabinetPageComponent {
     if(!localStorage.getItem('jwtToken')){
       this.router.navigate(["/"]);
     }
-  }
-  checkCabinet(){
-    this.checkToken();
-    this.authService.cabinet()
-      .subscribe({
-        next: value => {
-          this.text = 'Ok';
-        },
-        error: value => {
-          console.log('error:'+JSON.stringify(value));
-          this.text = "check";
-          if(value.status == 200) {
-            this.text = "successful";
-          }
-          if(value.status == 401) {
-            this.text = "Unauthorized";
-          }
-        }
-      })
   }
 }
