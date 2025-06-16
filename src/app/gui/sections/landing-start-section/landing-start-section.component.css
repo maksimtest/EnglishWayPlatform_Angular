@@ -1,0 +1,40 @@
+.start-section {
+  margin-top: -240px;
+  padding-top: 300px;
+  font-family: "Poppins", sans-serif;
+  background: var(--landingHeaderSectionFixedBackground);
+  color: var(--landingLevelSectionTextColor);
+  min-height: 500px;
+  z-index: 40;
+  position: relative;
+}
+.start-section .image-blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.start-section .image-blocks{
+  max-width: 1050px;
+}
+.start-section .image-blocks img{
+  max-width: calc(100%/2 - 40px);
+}
+.start-section .button-blocks{
+  text-align: center;
+}
+.start-section .button-blocks button{
+  background: white;
+  color: var(--landingCardSectionTextColor);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 2px;
+  min-width:100px;
+  text-align: center;
+}
+.start-section .button-blocks button:hover{
+  box-shadow: 0 0 15px rgba(21, 21, 21, 0.35);
+  color: var(--landingHeaderSectionFixedBorderColor);
+}

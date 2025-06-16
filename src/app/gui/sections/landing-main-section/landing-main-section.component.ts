@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {TranslatePipe} from "@ngx-translate/core";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-landing-main-section',
@@ -11,5 +12,8 @@ import {TranslatePipe} from "@ngx-translate/core";
   styleUrl: './landing-main-section.component.css'
 })
 export class LandingMainSectionComponent {
-
+  constructor(private router: Router) {}
+  moveToLevelTest(){
+    this.router.navigate(['level-test']);//.then(r => );
+  }
 }

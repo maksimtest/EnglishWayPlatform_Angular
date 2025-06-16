@@ -18,7 +18,7 @@ export class CabinetMainComponent {
   @Input() menu: MenuItem[]=[];
   @Input() currentPageByMenuItem: string="Home";
   @Output() logoutEvent = new EventEmitter();
-
+  @Input() roles:string="";
   logout(){
     this.logoutEvent.emit();
   }

@@ -3,7 +3,10 @@
     <app-cabinet-aside [menu]="asideMenu"></app-cabinet-aside>
     <app-cabinet-main
       [menu]="mainMenu"
+      [roles]="roles"
       (logoutEvent)="logout()"
-    ></app-cabinet-main>
+    >
+      <router-outlet></router-outlet>
+    </app-cabinet-main>
   </section>
 </div>
