@@ -1,0 +1,15 @@
+.footer-section {
+  font-family: "Poppins", sans-serif;
+  background: white;
+  color: var(--landingHeaderSectionFixedBorderColor);
+  min-height: 200px;
+}
+.footer-section .text-blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-top: 80px;
+}

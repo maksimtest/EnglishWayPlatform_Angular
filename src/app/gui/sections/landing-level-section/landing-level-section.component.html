@@ -1,0 +1,113 @@
+<section class="level-section">
+  <div class="container">
+    <h2>Для кого наша платформа</h2>
+
+    <div class="level-section-items">
+
+      <div *ngFor="let level of levels; let i = index"
+           class="level-item-with-separator"
+           style="flex-direction: row">
+
+        <div class="level-item level-item-line"
+             *ngIf="i>0"
+             [appAnimateIntersection]="getLevelDirection(i)">
+          <svg width="100%" height="300" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 150 C 200 100, 400 200, 1000 120" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <path d="M0 150 C 200 120, 400 220, 1000 120" stroke="#ffffff" stroke-width="2" fill="none"/>
+            <path d="M0 150 C 200 140, 400 240, 1000 120" stroke="#ffffff" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
+        <div class="level-item"
+             [appAnimateIntersection]="getLevelDirection(i)"
+             [ngClass]="{'active': activeLevelCode === level.code}"
+             (click)="changeActiveLevel(level.code)">
+          <div class="level-item-block">
+            <div class="level-name">
+              <p>{{ level.code }}</p>
+            </div>
+          </div>
+          <div class="level-item-text">{{ level.name }}</div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="level-carousel"
+    >
+
+      <div class="level-carousel-block"
+           [ngClass]="{'visible': activeLevelCode === 'A0',
+           'from-right':fromRightAnimationDirection,
+           'from-left':!fromRightAnimationDirection}"
+      >
+        A0
+      </div>
+
+      <div class="level-carousel-block"
+           [ngClass]="{'visible': activeLevelCode === 'A1',
+           'from-right':fromRightAnimationDirection,
+           'from-left':!fromRightAnimationDirection}"
+      >
+        A1
+        <p>Этот уровень предназначен для тех, кто только начинает знакомство с английским языком. Вы научитесь:</p>
+        <p>• Использовать простые фразы и выражения в повседневных ситуациях.</p>
+        <p>• Представляться и рассказывать о себе.</p>
+        <p>• Понимать медленный и четкий разговорный английский.</p>
+        <p>• Строить элементарные предложения.</p>
+      </div>
+
+      <div class="level-carousel-block"
+           [ngClass]="{'visible': activeLevelCode === 'A2',
+           'from-right':fromRightAnimationDirection,
+           'from-left':!fromRightAnimationDirection}"
+      >
+        A2
+        <p>На этом этапе вы сможете:</p>
+        <p>• Вести простые диалоги на знакомые темы.</p>
+        <p>• Читӑть и понимать короткие тексты.</p>
+        <p>• Использовать основные грамматические конструкции.</p>
+        <p>• Описывать свои планы и прошлые события.</p>
+      </div>
+
+      <div class="level-carousel-block"
+           [ngClass]="{'visible': activeLevelCode === 'B1',
+           'from-right':fromRightAnimationDirection,
+           'from-left':!fromRightAnimationDirection}"
+      >
+        B1
+        <p>Если ваш уровень B1, значит, вы уже можете:</p>
+        <p>• Общаться на знакомые темы без подготовки.</p>
+        <p>• Писать простые тексты, такие как письма и статьи.</p>
+        <p>• Понимать основные моменты в разговорах носителей языка.</p>
+        <p>• Использовать более сложные грамматические структуры.
+        </p>
+      </div>
+
+      <div class="level-carousel-block"
+           [ngClass]="{'visible': activeLevelCode === 'B2',
+           'from-right':fromRightAnimationDirection,
+           'from-left':!fromRightAnimationDirection}"
+      >
+        B2
+        <p>Этот уровень подходит тем, кто хочет совершенствовать свой английский и чувствовать себя уверенно в
+          международной среде. Вы научитесь:</p>
+        <p>• Вести свободные беседы на разные темы.</p>
+        <p>• Читать и понимать сложные тексты.</p>
+        <p>• Аргументировать свою точку зрения и участвовать в дискуссиях.</p>
+        <p>• Говорить и писать без значительных грамматических ошибок.
+        </p>
+      </div>
+
+      <div class="level-carousel-block"
+           [ngClass]="{'visible': activeLevelCode === 'C1',
+           'from-right':fromRightAnimationDirection,
+           'from-left':!fromRightAnimationDirection}"
+      >
+        <p>C1</p>
+      </div>
+
+    </div>
+  </div>
+</section>

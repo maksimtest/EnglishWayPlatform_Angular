@@ -1,0 +1,25 @@
+<section class="card-section">
+  <div class="container">
+
+    <div class="card-section-header">
+      <div class="card-section-title"></div>
+      <h2>Начните свой путь английского прямо сейчас</h2>
+      <div class="card-section-description"></div>
+    </div>
+
+    <div class="card-section-cards">
+
+      <div class="card-item block-card-item"
+           *ngFor="let card of cards; let i = index"
+           [appAnimateIntersection]="getDirection(i)"
+      >
+        <div class="card-image" [innerHTML]="card.svg | safeHtml">
+        </div>
+        <h3>{{card.h3}}</h3>
+        <div class="card-item-text">{{card.text}}</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
