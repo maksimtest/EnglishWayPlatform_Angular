@@ -1,0 +1,76 @@
+<section class="main-section">
+  <div class="container">
+    <div class="main-section-block">
+
+
+
+
+
+      <div *ngIf="!finishTestAlready">
+        <h2>Define english level</h2>
+
+        <div class="test level">{{ levelValue }}</div>
+
+        <div class="test header">
+          <div class="header-number">{{ numberValue }}/{{ tests.length }}</div>
+          <div class="header-question">{{ questionTextValue }}</div>
+        </div>
+
+        <div class="case">
+          <div class="case-item">
+
+            <input type="radio" name="question1" [(ngModel)]="selectedAnswer" [value]="1">
+            <label>{{ case1TextValue }}</label>
+          </div>
+          <div class="case-item">
+            <input type="radio" name="question1" [(ngModel)]="selectedAnswer" [value]="2">
+            <label>{{ case2TextValue }}</label>
+          </div>
+          <div class="case-item">
+            <input type="radio" name="question1" [(ngModel)]="selectedAnswer" [value]="3">
+            <label>{{ case3TextValue }}</label>
+          </div>
+        </div>
+
+        <div class="test buttons">
+          <button (click)="prevTest()"
+                  [disabled]="currentNumber <= 1"
+          >Prev
+          </button>
+          <button (click)="nextTest()"
+                  [disabled]="currentNumber >= tests.length"
+          >Next
+          </button>
+          <button (click)="finishTest()" class="finish-button"
+                  [disabled]="currentNumber < tests.length"
+          >Finish
+          </button>
+        </div>
+      </div>
+
+
+
+      <div *ngIf="finishTestAlready" class="success-story">
+        {{ "LEVEL-TEST-PAGE_CONGRATULATIONS_OF_FINISHED_TEST"|translate }}
+        {{ "LEVEL-TEST-PAGE_WE_SEND_YOUR_LEVEL_TO_YOUR_EMAIL"|translate }}
+        <br>
+        {{ "LEVEL-TEST-PAGE_WE_PREPARE_SOME_TASKS_FOR_YOU"|translate }}
+        {{ "LEVEL-TEST-PAGE_ENTERED_YOUR_EMAIL_BELLOW_AND_IMPROVE_YOUR_ENGLISH"|translate }}
+        <br>
+        <hr>
+        <div class="quick-register-form">
+          <h2>{{ "REGISTRATION-PAGE_HEADER_TEXT"|translate }}</h2>
+          <app-quick-register-form [answersOfLevelTest]="answersForRegister"></app-quick-register-form>
+        </div>
+      </div>
+
+
+      <div class="main-section-decorate1"></div>
+
+      <div class="main-section-decorate2">
+        <img src="images/icon_decorate2.png" alt="">
+      </div>
+
+    </div>
+  </div>
+</section>
