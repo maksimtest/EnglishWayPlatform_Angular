@@ -1,0 +1,81 @@
+.main-section-block{
+  background-color: white;
+  border-width: 8px;
+}
+.main-section-container{
+  width: 800px;
+  min-height: 400px;
+  margin-top: 40px;
+  align-content: start;
+  color: var(--landingCardSectionH2Color);
+  font-size: 18px;
+}
+.quick-register-form{
+  width: 340px;
+}
+.test{
+  width: 800px;
+}
+.level{
+  text-align: right;
+}
+.test-page{
+  /* center */
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  border-bottom: 1px solid grey;
+  padding: 20px 0;
+}
+.header-number{
+  width: 40px;
+  text-align: center;
+}
+.header-question{
+  width: calc(100% - 100px);
+}
+.case{
+  padding-left: 50px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid grey;
+}
+.case-item{
+  display: flex;
+  flex-direction: row;
+  justify-content:left;
+  align-content: center;
+  margin-top: 10px;
+}
+.case-item label{
+  margin-left: 10px;
+}
+.buttons{
+  margin: 10px 0;
+}
+.buttons button{
+  margin-right: 40px;
+  margin-top: 10px;
+  padding: 6px 10px;
+  font-size: 14px;
+  background-color: var(--landingCardSectionBackgroundColor);
+}
+.finish-button{
+  margin-left: 40px;
+}
+.success-story{
+  line-height: 1.6;
+}
+.success-story hr{
+  margin: 16px 0;
+}
+h2{
+
+}
+.main-section-decorate2,
+.main-section-decorate2 img{
+  animation: none;
+  transform: none;
+}
