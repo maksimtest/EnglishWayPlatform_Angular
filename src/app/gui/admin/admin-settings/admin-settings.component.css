@@ -1,0 +1,37 @@
+.admin-settings input{
+  padding: 8px;
+}
+.admin-settings-item{
+  width: calc(100% - 80px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid grey;
+}
+.admin-settings-description input{
+  width: 500px;
+}
+.admin-settings-description input:read-only{
+  background-color: transparent;
+  border: none;
+}
+.admin-settings-code{
+  text-align: left;
+}
+.admin-settings label {
+  margin-right: 10px;
+}
+.button-area{
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+button{
+  padding: 4px 10px;
+}
+button.hidden{
+  visibility: hidden;
+}

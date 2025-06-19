@@ -1,0 +1,29 @@
+.admin-student{
+  width: 100%;
+  margin: 10px;
+}
+.admin-student{
+  margin-top: 20px;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+.admin-student-user{
+  width: 260px;
+}
+.admin-student-activity{
+  width: 500px;
+  border: 1px solid maroon;
+}
+.admin-student-activity-item{
+  border: 1px solid grey;
+  text-align: center;
+}
+.admin-student-new-payment{
+  width: 220px;
+}
+.admin-student-new-payment button{
+  margin: 10px;
+}

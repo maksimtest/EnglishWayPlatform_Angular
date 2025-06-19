@@ -1,0 +1,8 @@
+.admin-history{
+  width: 100%;
+}
+.admin-history-item{
+  width: calc(100% - 40px);
+  border-bottom: 1px solid grey;
+  padding : 10px 0;
+}

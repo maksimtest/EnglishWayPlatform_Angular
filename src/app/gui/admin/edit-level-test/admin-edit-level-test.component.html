@@ -1,0 +1,104 @@
+<app-inner-header
+  h2Text="Hi Vladimir! Welcome to dashboard."
+  describeText="Make sure You have enouph analitical information."
+></app-inner-header>
+
+<app-inner-general-error-block *ngIf="generalErrorText"
+                               [generalErrorText]="generalErrorText"
+></app-inner-general-error-block>
+
+<div class="test-list">
+  <div *ngFor="let test of levelTest">
+
+    <div id="test-{{test.id}}" class="test">
+
+      <div class="management-block">
+        <div class="management-line">
+          <div class="buttons-block">
+            <app-editing-buttons-block
+              (editEvent)="edit($event)"
+              (removeEvent)="remove($event)"
+              (downEvent)="down($event)"
+              (upEvent)="up($event)"
+              (saveEvent)="save($event)"
+              [id]="test.id"
+            ></app-editing-buttons-block>
+          </div>
+
+          <div class="number-block">
+            <p>{{ test.num }} / {{ levelTest.length }}</p>
+          </div>
+
+
+        </div>
+        <div class="management-line">
+          <div class="level-block">
+            <p *ngIf="test.id !== editingLineId">{{ test.level }}</p>
+            <select [value]="test.correct" id="level-{{test.id}}" *ngIf="test.id === editingLineId">
+              <option
+                value="{{level}}"
+                *ngFor="let level of levels"
+                [selected]="test.level === level"
+              >{{ level }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="management-line">
+          <button class="add-new-test-button"
+          (click)="create(test.id)">create new test</button>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="content-block-question">
+            <textarea
+              [readonly]="test.id !== editingLineId"
+              id="question-{{test.id}}">{{ test.question }}</textarea>
+        </div>
+        <div class="content-block-radio">
+          <div class="content-block-radio-line">
+            <input type="radio"
+                   id="radio1-{{test.id}}"
+                   name="radio-{{test.id}}"
+                   class="case-radio"
+                   [checked]="test.correct===1"
+                   [disabled]="test.id !== editingLineId">
+            <input type="text"
+                   id="case1-{{test.id}}"
+                   class="case-text"
+                   [value]="test.case1"
+                   [readonly]="test.id !== editingLineId">
+          </div>
+          <div class="content-block-radio-line">
+            <input type="radio"
+                   id="radio2-{{test.id}}"
+                   name="radio-{{test.id}}"
+                   class="case-radio"
+                   [checked]="test.correct===2"
+                   [disabled]="test.id !== editingLineId">
+            <input type="text"
+                   id="case2-{{test.id}}"
+                   class="case-text"
+                   [value]="test.case2"
+                   [readonly]="test.id !== editingLineId">
+          </div>
+          <div class="content-block-radio-line">
+            <input type="radio"
+                   id="radio3-{{test.id}}"
+                   name="radio-{{test.id}}"
+                   class="case-radio"
+                   [checked]="test.correct===3"
+                   [disabled]="test.id !== editingLineId">
+            <input type="text"
+                   id="case3-{{test.id}}"
+                   class="case-text"
+                   [value]="test.case3"
+                   [readonly]="test.id !== editingLineId">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="admin-settings">
+
+  <div class="admin-settings-item" *ngFor="let settings of arraySettings">
+    <div class="admin-settings-code" >
+      <p>Code: {{ settings.code }}</p>
+      <div class="admin-settings-description">
+        <label for="admin-setting-description-{{settings.id}}">Description:</label>
+        <input type="text"
+               id="admin-setting-description-{{settings.id}}"
+               [readonly]="!allowChangeDescription || !settings.editingMode"
+               value="{{settings.description}}">
+      </div>
+    </div>
+    <div class="admin-settings-value">
+      <input type="checkbox"
+             [disabled]="!settings.editingMode"
+             id="admin-setting-value-{{settings.id}}"
+             [checked]="settings.value"
+      >
+      {{ settings.value }}
+    </div>
+    <div class="button-area">
+      <button (click)="updateSettings(settings.id)"
+              [class]="settings.editingMode?'':'hidden'">save</button>
+      <button (click)="editSettings(settings.id)" [disabled]="settings.editingMode">edit</button>
+    </div>
+  </div>
+</div>
