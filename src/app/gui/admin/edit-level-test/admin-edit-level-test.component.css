@@ -1,0 +1,88 @@
+.test-list{
+  margin-top: 20px;
+  border-top: 1px solid grey;
+  padding-top: 10px
+}
+.test{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-content: center;
+  gap: 20px;
+  border-bottom: 1px solid grey;
+  padding: 20px 0;
+}
+.management-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.management-line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  gap: 30px;
+  width: 240px;
+}
+.add-new-test-button{
+  padding: 8px;
+}
+.number-block{
+  margin-top: 4px;
+  color: black;
+}
+.level-block{
+  margin: 0 auto;
+}
+.level-block select{
+  width: 180px;
+  font-size: 14px;
+  padding: 4px;
+  margin-top: 10px;
+}
+.level-block option{
+  font-size: 14px;
+  width: 180px;
+}
+.number-input{
+  width: 18px;
+  padding: 4px;
+}
+.content-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+.content-block textarea{
+  width: 707px;
+  min-height: 32px;
+  padding: 8px;
+}
+.editing .content-block textarea{
+  border: 1px solid grey;
+  background-color: white;
+}
+.editing .number-block{
+  color: red;
+}
+.content-block-radio-line{
+  text-align: left;
+  margin: 8px 0;
+}
+.content-block-radio-line input[type="radio"]{
+  margin: 10px 10px 10px 40px;
+}
+.case-text{
+  padding: 4px;
+  width: 80px;
+}
+.content-block-radio input[type="text"]:read-only, .content-block textarea:read-only {
+  background-color: transparent;
+  border: none;
+}
+.content-block-radio input[type="radio"]:disabled{
+  color: red;
+}

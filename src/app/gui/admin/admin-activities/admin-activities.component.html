@@ -1,0 +1,36 @@
+<p>admin-students works!</p>
+
+<div class="admin-list">
+
+  <div *ngFor="let student of studentsList" class="admin-student">
+    <div class="admin-student-user">{{ student.user.name }} <br>
+      {{ student.user.email }} <br> actualLevel: {{ student.actualLevelCode }}
+    </div>
+    <div class="admin-student-activity">
+      <div *ngFor="let activity of student.studentActivities" class="admin-student-activity-item">
+        <p>{{activity.courseName}} <br>
+          {{ activity.paymentDate }}, payment-count: {{ activity.paymentCount }},
+          active-number: {{ activity.activeNumber }} <br>
+        Level: {{activity.courseUnitCode}}
+        </p>
+      </div>
+    </div>
+    <div class="admin-student-new-payment">
+      <select name="" id="admin-student-new-course-{{student.user.id}}">
+        <div *ngFor="let course of courses">
+        <option value="{{course.id}}" *ngIf="levelMoreThanSecond(student.actualLevelCode, course.codeLevel)">{{course.codeLevel}}-{{course.name}}</option>
+        </div>
+      </select>
+      <br>
+      <select name="" id="admin-student-new-teacher-{{student.user.id}}">
+        <div *ngFor="let teacher of teachersList">
+          <option value="{{teacher.id}}">{{teacher.name}}</option>
+        </div>
+      </select>
+
+      <button (click)="createActivity(student.user.id)">create activity</button>
+    </div>
+  </div>
+
+</div>
+
